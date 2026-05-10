@@ -1,0 +1,131 @@
+# KaLogin 中文语言文件
+# 支持颜色代码: &c(红), &a(绿), &b(青), &d(粉), &e(黄), &f(白), &l(粗体), &o(斜体), &n(下划线), &m(删除线), &r(重置)
+# 也支持 MiniMessage 格式: <red>, <green>, <bold> 等
+
+# 命令相关
+command:
+  no-permission: "&c你没有权限使用此命令！"
+  unknown-subcommand: "&c未知的子命令！使用 /kl help 查看帮助"
+  delete:
+    usage: "&c用法: /kl delete <玩家名>"
+    player-not-found: "&c找不到玩家: {player}"
+    success: "&a已成功删除玩家 &e{player} &a的数据"
+    failed: "&c删除失败，该玩家可能没有注册数据"
+    kicked: "&c你的账号已被管理员删除，请重新注册"
+  register:
+    usage: "&c用法: /kl register <玩家名> <密码>"
+    validation-failed: "&c密码验证失败: {error}"
+    success: "&a已成功为玩家 &e{player} &a设置密码"
+    failed: "&c设置失败，该玩家可能没有注册数据"
+  reload:
+    success: "&a配置文件已重载"
+
+# 登录相关
+login:
+  auto-login-success: "&aIP 已验证，自动登录成功！"
+  success: "&a登录成功！欢迎回来！"
+  verifying: "&e正在验证密码..."
+  password-empty: "&c密码不能为空！"
+  password-wrong: "&c密码错误，请重试。剩余尝试次数: &e{attempts}"
+  too-many-attempts: "&c登录失败次数过多，已被踢出服务器！"
+  timeout-kick: "&c登录超时，请在 &e{seconds} &c秒内完成登录！"
+  dialog-title: "玩家登录"
+  dialog-description: "请输入你的密码：（剩余尝试次数: {attempts}）"
+  dialog-button: "登录"
+  auto-login-checkbox: "同IP自动登录"
+  password-input: "请输入密码："
+
+# 注册相关
+register:
+  welcome: "&a欢迎来到服务器！&e请在 {seconds} &a秒内完成注册"
+  timeout-kick: "&c注册超时，请在 &e{seconds} &c秒内完成注册！"
+  password-empty: "&c密码不能为空！"
+  password-empty-retry: "&c密码不能为空，请重新设置。"
+  password-invalid: "&c{error}，请重新设置。"
+  password-mismatch: "&c两次输入的密码不一致，请重新开始。"
+  password-mismatch-retry: "&c两次输入不匹配，请重新设置密码。"
+  saving: "&e正在保存账号..."
+  success: "&a注册成功！你可以开始游戏了。"
+  failed: "&c注册失败，请联系管理员。"
+  dialog-title: "新玩家注册"
+  dialog-description: "{description}"
+  dialog-button: "完成注册"
+  password-input: "请输入你的密码："
+  confirm-password-input: "请再次输入密码以确认："
+
+# 修改密码相关
+change-password:
+  old-password-empty: "&c旧密码不能为空！"
+  old-password-wrong: "&c旧密码错误，请重试。剩余尝试次数: &e{attempts}"
+  old-password-input: "请输入旧密码："
+  new-password-empty: "&c新密码不能为空！"
+  new-password-invalid: "&c新密码验证失败: {error}"
+  new-password-input: "请输入新密码："
+  confirm-new-password-input: "请再次输入新密码以确认："
+  same-password: "&c新密码不能与旧密码相同！"
+  password-mismatch: "&c两次输入的新密码不一致，请重新设置。"
+  too-many-attempts: "&c旧密码验证失败次数过多！"
+  saving: "&e正在保存新密码..."
+  success: "&a密码修改成功！"
+  failed: "&c密码修改失败，请联系管理员。"
+  dialog-title: "修改密码"
+  dialog-button: "确认修改"
+  cancel-button: "取消"
+
+# IP 限制相关
+ip-limit:
+  exceeded: "&c该 IP 已达到最大注册账号数量限制（&e{count} &c个）！"
+
+# 密码验证相关
+password-validation:
+  too-short: "&c密码长度不能少于 &e{min} &c个字符"
+  too-long: "&c密码长度不能超过 &e{max} &c个字符"
+  invalid-chars: "&c密码包含非法字符，只允许大小写字母、数字和英文符号"
+  in-blacklist: "&c密码&e{word}&c过于简单，请重新设置"
+  missing-uppercase: "&c密码必须包含至少一个大写字母"
+  missing-lowercase: "&c密码必须包含至少一个小写字母"
+  missing-number: "&c密码必须包含至少一个数字"
+  missing-symbol: "&c密码必须包含至少一个符号"
+  too-many-same-digits: "&c密码不允许连续 &e{max} &c个相同的数字"
+
+# 插件相关
+plugin:
+  enabled: "&aKaLogin 插件已启用！"
+  disabled: "&aKaLogin 插件已禁用！"
+  update-available: "&e[KaLogin] &f检测到新版本 &a{latest}&f，当前: &7{current}  &a[MineBBS] &8| &b[SpigotMC]"
+  update-minebbs-hover: "&7点击打开 MineBBS 页面"
+  update-spigotmc-hover: "&7点击打开 SpigotMC 页面"
+
+# 登出相关
+logout:
+  kick-message: "&6你已登出，下次登录需要重新验证"
+  not-logged-in: "&c你还没有登录！"
+
+# 防作弊相关
+anti-cheat:
+  chat-blocked: "&c请在完成注册/登录后再进行聊天"
+  command-blocked: "&c请在完成注册/登录后再使用命令"
+  action-blocked: "&c请在完成注册/登录后再进行此操作"
+
+# AuthMe 相关
+authme:
+  enabled: "已启用 AuthMe 集成"
+  not-found: "未找到 AuthMe 插件"
+  command-help-delete: "/kalogin delete <玩家> - 删除玩家数据 (AuthMe)"
+  command-help-register: "/kalogin register <玩家> <密码> - 为玩家设置密码 (AuthMe)"
+  command-help-reload: "/kalogin reload - 重载配置文件 (KaLogin)"
+  unknown-command: "未知命令: {command}"
+  delete-usage: "用法: /kalogin delete <玩家>"
+  delete-success: "已删除玩家 {player} 的数据"
+  register-usage: "用法: /kalogin register <玩家> <密码>"
+  register-set-success: "已为玩家 {player} 设置密码"
+  register-failed: "注册失败，玩家可能已存在"
+  player-only: "只有玩家可以使用此命令！"
+  fallback-to-builtin: "回退到 KaLogin 内置认证系统"
+
+# 配置更新相关
+config_update:
+  detected_old_version: "检测到旧版本配置文件 (v{old}->v{new})，正在更新..."
+  backup_success: "旧配置已备份到: {path}"
+  update_success: "配置文件更新成功！旧版本: v{old} -> 新版本: v{new}"
+

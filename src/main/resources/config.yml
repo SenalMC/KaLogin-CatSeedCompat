@@ -1,0 +1,108 @@
+# KaLogin 配置文件
+
+# 配置文件版本（请勿修改）
+config-version: 3
+
+# 语言设置: zh_CN (简体中文) 或 en_US (English)
+language: "zh_CN"
+
+# 是否使用 AuthMe 作为登录验证
+use-AuthMe: false
+
+# OP 玩家进入时检查 GitHub 上是否有新版本
+check-update: true
+
+database:
+
+  # 存储类型: sqlite、mysql 或 catseed-sqlite
+  # 使用 CatSeedLogin 兼容模式时，请设置为 catseed-sqlite
+  type: "catseed-sqlite"
+
+  # 如果使用 mysql，请填写以下信息
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "kalogin"
+    username: "root"
+    password: "password"
+    # 连接池参数（可选）
+    params: "?useSSL=false&serverTimezone=UTC"
+
+  # 如果使用 sqlite，数据库文件名
+  sqlite:
+    file_name: "data.db"
+
+
+# CatSeedLogin 兼容模式
+# 当 database.type = "catseed-sqlite" 时生效。
+# 第一版建议 readonly: true，只读取旧 CatSeedLogin 账号库，不写入，避免两个登录系统同时写 SQLite 导致锁库。
+catseed:
+  sqlite-file: "D:\\服务器\\[25566] 登录服\\plugins\\CatSeedLogin\\accounts.db"
+  table: "accounts"
+  readonly: false
+  username-ignore-case: true
+  columns:
+    username: "name"
+    password: "password"
+    ips: "ips"
+    last-action: "lastAction"
+  messages:
+    not-registered: "&c账号不存在，请先在旧登录服或官网完成注册。"
+
+# 注册设置
+settings:
+  # 密码最小长度
+  min-password-length: 6
+  # 密码最大长度
+  max-password-length: 20
+  # 密码只能包含大小写字母、数字和英文符号
+  password-regex: "^[a-zA-Z0-9!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>/?~`]+$"
+  # 密码不能包含以下字符串
+  password-blacklist:
+    - "PASSWORD"
+    - "password"
+    - "123456"
+    - "12345678"
+  # 是否必须包含大写字母
+  has-uppercase: false
+  # 是否必须包含小写字母
+  has-lowercase: false
+  # 是否必须包含符号
+  has-symbol: false
+  # 是否必须包含数字
+  has-number: false
+  # 不允许连续 n 个相同的数字（0 表示不限制）
+  max-consecutive-same-digits: 3
+
+# 登录注册设置
+login:
+  # 注册超时时间（秒），超时后踢出玩家
+  register-timeout: 90
+  # 登录超时时间（秒），超时后踢出玩家
+  login-timeout: 90
+  # 登录密码错误最大次数，超过后踢出玩家
+  max-login-attempts: 3
+  # 每个 IP 最多注册的账号数量（0 表示不限制）
+  max-accounts-per-ip: 3
+  # 是否显示"同IP自动登录"勾选框（公网环境建议关闭）
+  show-auto-login-checkbox: true
+  # 进入服务器后延迟多少 tick 显示登录/注册界面（0 或负数表示不延迟）
+  # 防止其他插件/网络延迟等特殊情况下无法正常弹出登录/注册界面
+  dialog-delay-ticks: 1
+
+# 修改密码设置
+change-password:
+  # 旧密码验证最大失败次数，超过后取消修改
+  max-attempts: 3
+
+
+# 登录完成后执行指令
+# 触发时机: 正常登录成功 / 注册成功 / 自动登录成功
+# 支持占位符: %player%, %uuid%, %ip%
+after-login-commands:
+  enabled: false
+  # console = 控制台执行; player = 玩家身份执行
+  command-mode: "console"
+  commands:
+    - "server 主大厅"
+    # - "lp user %player% permission set example.permission true"
