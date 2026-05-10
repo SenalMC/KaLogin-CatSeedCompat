@@ -2,6 +2,8 @@
 
 一个强大的 Minecraft Paper 服务器登录插件，提供安全的用户认证和反作弊功能。
 
+请注意！本插件为此项目的CatseedLogin适配版https://github.com/Katacr/KaLogin
+
 ## 支持版本
 Paper 1.21.7 及以上
 
